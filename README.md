@@ -4,8 +4,8 @@
 ## >> I N F O R M A C I Ó N <<
 
 ### ➤ A u t o r e s
-- [ ] **Tricherri**, Santiago
-- [ ] **Ojeda**, Dante
+- **Tricherri**, Santiago
+- **Ojeda**, Dante
 
 ### ➤ C o n t e n i d o
 
