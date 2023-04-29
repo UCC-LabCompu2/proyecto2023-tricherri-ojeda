@@ -1,6 +1,4 @@
 h1 {
-    color: #7ab1f3;
-    font-family: 'Philosopher', sans-serif;
     text-align: center;
     font-size: 3em;
 }
@@ -32,8 +30,4 @@ hr {
     padding: 5em;
     font-size: 1.5em;
     justify-content: center;
-}
-
-#codigo {
-
 }
