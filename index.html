@@ -7,13 +7,37 @@
     <meta content="Traductor de texto a código morse" name="descripcion">
     <meta content="Codigo morse, traductor, codificador" name="palabras-principales">
     <link rel="stylesheet" href="Estilo.css" type="text/css">
+    <link rel="shortcut icon" href="Imágenes/favicon2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-    <img src="Imágenes/logo.png">
-    <h1>MorseCrypt</h1>
+    <img id="iconochat" src="Imágenes/logo.png" alt="">
+    <h1 class="tituloprincipal"> MorseCrypt</h1>
+    <hr>
 </header>
 <nav></nav>
-<section></section>
+<section>
+    <!-- TRADUCTOR -->
+    <div class="Cuadros_Texto">
+        <p>
+            <label id="texto1" for="texto">Texto</label>
+        </p>
+        <label for="texto"></label>
+        <textarea id="texto" rows="4" cols="50"> </textarea>
+        <p>
+            <label for="codigo">Código Morse</label>
+        </p>
+        <label for="codigo"></label>
+        <textarea id="codigo" rows="4" cols="50"> </textarea>
+    </div>
+    <hr>
+    <div>
+    </div>
+    <div>
+    </div>
+</section>
 </body>
 </html>

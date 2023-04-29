@@ -1,3 +1,39 @@
-h1{
+h1 {
     color: #7ab1f3;
+    font-family: 'Philosopher', sans-serif;
+    text-align: center;
+    font-size: 3em;
+}
+#iconochat {
+    float: left;
+    width: 4em;
+    padding-left: 2em;
+}
+
+body {
+    background: #475665;
+    height: 1px;
+    border-width: 0;
+    /*LETRAS*/
+    font-family: 'Philosopher', sans-serif;
+    color: #7ab1f3
+}
+
+hr {
+    height: 0.5px;
+    color: #7ab1f3;
+    background-color: #7ab1f3;
+    border-width: 0;
+}
+
+.Cuadros_Texto {
+    column-count: 2;
+    text-align: center;
+    padding: 5em;
+    font-size: 1.5em;
+    justify-content: center;
+}
+
+#codigo {
+
 }
