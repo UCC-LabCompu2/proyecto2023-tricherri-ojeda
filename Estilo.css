@@ -1,7 +1,9 @@
 h1 {
     text-align: center;
     font-size: 3em;
+    font-weight: bold;
 }
+
 #iconochat {
     float: left;
     width: 4em;
@@ -30,4 +32,28 @@ hr {
     padding: 5em;
     font-size: 1.5em;
     justify-content: center;
+}
+
+canvas {
+    width: 15px;
+    height: 15px;
+    border:1px solid #000000;";
+}
+h2{
+    padding: 10px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+table, th, td {
+    width: 60%;
+    border:1px solid black;
+    table-layout: fixed;
+    margin: auto;
+}
+table td{
+    text-align: center;
+}
+caption{
+    text-align: center;
 }
