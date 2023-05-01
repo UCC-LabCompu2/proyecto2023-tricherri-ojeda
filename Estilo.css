@@ -33,6 +33,9 @@ hr {
     font-size: 1.5em;
     justify-content: center;
 }
+textarea{
+    background-color: #38434f;
+}
 
 canvas {
     width: 15px;
