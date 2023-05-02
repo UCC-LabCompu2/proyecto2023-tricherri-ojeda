@@ -28,19 +28,47 @@ hr {
 
 .Cuadros_Texto {
     column-count: 2;
+    column-gap: 7em;
     text-align: center;
-    padding: 5em;
+    padding:5em;
     font-size: 1.5em;
     justify-content: center;
 }
 textarea{
     background-color: #38434f;
+    border-radius: 1.2em;
+    border-color: #54789b;
 }
-
+button {
+    border:1px solid #54789b;";
+    border-radius: 2em;
+    background-color: #38434f;
+    color: #CDCDCD;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 2em;
+    cursor: pointer;
+}
+#Boton_Traducir{
+    margin-top: 10px;
+    margin-right: 41px;
+}
+#Simbolo_Play{
+    width: 1.3em;
+}
+#Simbolo_Copiar{
+    width: 1.3em;
+}
+#Codigo_Morse{
+    margin-bottom: 1.5em;
+}
 canvas {
     width: 15px;
     height: 15px;
-    border:1px solid #000000;";
+    border:1px solid #9dacb9;";
 }
 h2{
     padding: 10px 10px;
