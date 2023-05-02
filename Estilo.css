@@ -40,11 +40,11 @@ textarea{
     border-color: #54789b;
 }
 button {
-    border:1px solid #54789b;";
-    border-radius: 2em;
+    border: 1px solid #54789b;
+    border-radius: 12px;
     background-color: #38434f;
     color: #CDCDCD;
-    padding: 5px 5px;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
