@@ -2,6 +2,7 @@ h1 {
     text-align: center;
     font-size: 3em;
     font-weight: bold;
+    margin-right: 90px;
 }
 
 #iconochat {
@@ -16,7 +17,8 @@ body {
     border-width: 0;
     /*LETRAS*/
     font-family: 'Philosopher', sans-serif;
-    color: #7ab1f3
+    color: #7ab1f3;
+    letter-spacing: 7px;
 }
 
 hr {
