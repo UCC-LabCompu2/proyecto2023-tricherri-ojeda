@@ -1,8 +1,8 @@
 h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: bold;
-    margin-right: 90px;
+    margin-right: 80px;
 }
 
 #iconochat {
@@ -40,6 +40,7 @@ textarea{
     background-color: #38434f;
     border-radius: 1.2em;
     border-color: #54789b;
+    resize: none;
 }
 button {
     border: 1px solid #54789b;
@@ -80,10 +81,11 @@ h2{
 }
 /**/
 table, th, td {
-    width: 80%;
+    width: 83.3%;
     border:0.1pt solid #54789b;
     table-layout: fixed;
     margin: auto;
+    margin-bottom: 4em;
     border-collapse: collapse;
     background-color: #38434f;
     font-size: 20px;
