@@ -14,11 +14,10 @@
 </head>
 <body>
 <header>
-    <img id="iconochat" src="Imágenes/logo.png" alt="">
+    <img id="iconochat" src="Imágenes/logo.png" alt="Icono de texto">
     <h1 class="tituloprincipal"> MorseCrypt</h1>
     <hr>
 </header>
-<nav></nav>
 <section>
     <!-- T R A D U C T O R -->
     <div class="Cuadros_Texto">
@@ -31,12 +30,14 @@
         <button id="Boton_Traducir">Traducir</button>
         <p id="Codigo_Morse">
             <label for="codigo">Código Morse</label>
-            <button><img id="Simbolo_Play" src="Imágenes/simbolo_auris_gris.png" alt=""></button>
-            <button><img id="Simbolo_Copiar" src="Imágenes/simbolo_copiar_gris.png" alt=""></button>
+            <button><img id="Simbolo_Play" src="Imágenes/simbolo_auris_gris.png" alt="Icono de auriculares"></button>
+            <button><img id="Simbolo_Copiar" src="Imágenes/simbolo_copiar_gris.png" alt="Icono de copiar texto">
+            </button>
         </p>
         <!-- <canvas id="canvas"></canvas> -->
         <label for="codigo"></label>
         <textarea id="codigo" rows="6.7" cols="70"> </textarea>
+        <canvas id="canvas"></canvas>
     </div>
     <hr>
     <!-- T A B L A -->
@@ -137,10 +138,30 @@
     <div>
         <hr>
         <h2>Información</h2>
-        [COMPLETAR]
+        <article>
+            <p>
+                El código Morse es un sistema de codificación de caracteres alfabéticos y numéricos que utiliza
+                secuencias de señales, generalmente en forma de pulsos eléctricos, sonidos o luces, para transmitir
+                mensajes a través de largas distancias. Fue desarrollado por Samuel Morse y Alfred Vail en la década de
+                1830 y desempeñó un papel crucial en las comunicaciones durante más de un siglo.
+            </p>
+            <p>
+                Asigna a cada letra y número una secuencia única de puntos y rayas. Las señales se pueden transmitir
+                mediante pulsos eléctricos a través de cables, sonidos audibles o luces visibles.
+            </p>
+            <p>
+                Fue desarrollado para usar el telégrafo, un dispositivo ideado también por Samuel Morse en 1832. Era un
+                sistema de comunicación que permite transmitir mensajes a larga distancia mediante la codificación y
+                envío de señales. Emplea un dispositivo llamado "transmisor" que convierte los mensajes en señales
+                eléctricas, y un "receptor" que recupera las señales y las traduce nuevamente en mensajes legibles.
+            </p>
+        </article>
     </div>
-    <div>
-
+    <div class="Footer">
+        <hr id="Linea_AbajoInfo">
+        <footer>
+            <h3>Autores</h3> Tricherri Santiago | Ojeda Dante
+        </footer>
     </div>
 </section>
 </body>

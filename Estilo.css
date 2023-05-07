@@ -32,16 +32,19 @@ hr {
     column-count: 2;
     column-gap: 7em;
     text-align: center;
-    padding:5em;
+    padding: 5em;
     font-size: 1.5em;
     justify-content: center;
 }
-textarea{
+
+textarea {
     background-color: #38434f;
     border-radius: 1.2em;
     border-color: #54789b;
     resize: none;
+    color: #CDCDCD;
 }
+
 button {
     border: 1px solid #54789b;
     border-radius: 12px;
@@ -55,34 +58,54 @@ button {
     margin-left: 2em;
     cursor: pointer;
 }
-#Boton_Traducir{
+
+button:hover {
+    border: 2px solid #7bb0e5;
+    font-size: 12pt;
+}
+
+#Boton_Traducir {
     margin-top: 10px;
     margin-right: 41px;
 }
-#Simbolo_Play{
+
+#Simbolo_Play {
     width: 1.3em;
 }
-#Simbolo_Copiar{
+
+#Simbolo_Copiar {
     width: 1.3em;
 }
-#Codigo_Morse{
+
+#Codigo_Morse {
     margin-bottom: 1.5em;
 }
+
 canvas {
-    width: 15px;
-    height: 15px;
-    border:1px solid #9dacb9;";
+    margin-top: 10px;
+    width: 100px;
+    height: 45px;
+    border: 2px solid #54789b;
+    border-radius: 12px;
+    background-color: #38434f;
 }
-h2{
-    padding: 10px 10px;
+
+h2 {
+    padding-top: 30pt;
     text-align: center;
     font-weight: bold;
     font-size: 2em;
 }
+
+h3 {
+    font-weight: bold;
+    color: #7ab1f3;
+}
+
 /**/
 table, th, td {
     width: 83.3%;
-    border:0.1pt solid #54789b;
+    border: 0.1pt solid #54789b;
     table-layout: fixed;
     margin: auto;
     margin-bottom: 4em;
@@ -90,14 +113,46 @@ table, th, td {
     background-color: #38434f;
     font-size: 20px;
 }
-td{
+
+td {
     text-align: center;
     border-left: 0;
 }
-th{
+
+th {
     border-left: 0;
     border-right: 0;
 }
-caption{
+
+caption {
     text-align: center;
+}
+
+article {
+    letter-spacing: 2px;
+    margin-left: 120px;
+    margin-right: 120px;
+    text-align: justify;
+    text-indent: 40px;
+    padding: 15pt 15pt 15pt 15pt;
+    line-height: 25px;
+    background-color: #38434f;
+    border-radius: 20px;
+}
+
+#Linea_AbajoInfo {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+footer {
+    text-align: center;
+    color: #CDCDCD;
+    font-size: 10pt;
+    background-color: #38434f;
+}
+
+.Footer {
+    background-color: #38434f;
+    padding-bottom: 30px;
 }
