@@ -120,7 +120,6 @@ td {
 }
 
 th {
-    border-left: 0;
     border-right: 0;
 }
 
@@ -134,7 +133,7 @@ article {
     margin-right: 120px;
     text-align: justify;
     text-indent: 40px;
-    padding: 15pt 15pt 15pt 15pt;
+    padding: 15pt;
     line-height: 25px;
     background-color: #38434f;
     border-radius: 20px;
@@ -150,9 +149,9 @@ footer {
     color: #CDCDCD;
     font-size: 10pt;
     background-color: #38434f;
+    padding-bottom: 30px;
 }
 
 .Footer {
     background-color: #38434f;
-    padding-bottom: 30px;
 }
