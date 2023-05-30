@@ -43,6 +43,8 @@ textarea {
     border-color: #54789b;
     resize: none;
     color: #CDCDCD;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 button {
@@ -79,6 +81,17 @@ button:hover {
 
 #Codigo_Morse {
     margin-bottom: 1.5em;
+}
+
+.cajaCodigo {
+    display: inline-block;
+    border: 1px solid black;
+    background-color: #38434f;
+    border-radius: 1.2em;
+    border-color: #54789b;
+    color: #CDCDCD;
+    width: 550px;
+    height: 100px;
 }
 
 canvas {

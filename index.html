@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="Funciones.js"></script>
 </head>
 <body>
 <header>
@@ -20,21 +21,23 @@
 </header>
 <section>
     <!-- T R A D U C T O R -->
-    <div class="Cuadros_Texto">
+    <div class="Cuadros_Texto" id="mostrarResultado">
         <p>
             <label id="texto1" for="texto">Texto</label>
         </p>
         <label for="texto"></label>
         <textarea id="texto" rows="6.7" cols="70"> </textarea>
-        <button id="Boton_Traducir">Traducir</button>
+        <button id="Boton_Traducir" type="button" onclick="textoAMorse()">Traducir</button>
         <p id="Codigo_Morse">
-            <label for="codigo">Código Morse</label>
+            <!--- <label for="codigo">Código Morse</label> --->
+            Código Morse
             <button><img id="Simbolo_Play" src="Imágenes/simbolo_auris_gris.png" alt="Icono de auriculares"></button>
             <button><img id="Simbolo_Copiar" src="Imágenes/simbolo_copiar_gris.png" alt="Icono de copiar texto">
             </button>
         </p>
-        <label for="codigo"></label>
-        <textarea id="codigo" rows="6.7" cols="70"> </textarea>
+        <!---<label for="codigo"></label> --->
+        <!--- <textarea id="codigo" rows="6.7" cols="70"> </textarea> --->
+        <span id="resultado" class="cajaCodigo"></span>
         <canvas id="canvas"></canvas>
     </div>
     <hr>
@@ -163,6 +166,8 @@
             <h3>Autores</h3> Tricherri Santiago | Ojeda Dante
         </footer>
     </div>
+
 </section>
+
 </body>
 </html>
