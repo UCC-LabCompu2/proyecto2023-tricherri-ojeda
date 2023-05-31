@@ -90,8 +90,33 @@ button:hover {
     border-radius: 1.2em;
     border-color: #54789b;
     color: #CDCDCD;
-    width: 550px;
-    height: 100px;
+    width: 521px;
+    height: 110px;
+    padding-left: 20px;
+    overflow: auto; /* Si se excede tamaño */
+    text-align: start;
+    font-size: 15px;
+}
+/* width */
+.cajaCodigo::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+.cajaCodigo::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.cajaCodigo::-webkit-scrollbar-thumb {
+    background: #7ab1f3;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.cajaCodigo::-webkit-scrollbar-thumb:hover {
+    background: #54789b;
 }
 
 canvas {
