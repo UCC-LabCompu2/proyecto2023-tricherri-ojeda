@@ -1,15 +1,9 @@
 /**
- * Descripción de que hace la función
- * @method Nombre de la función
- * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
- * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
- * @return Valor que retorna
+ * Realiza la traducción de texto a morse.
+ * @method textoAMorse
  */
-function textoAMorse() {
-    // Obtiene el texto ingresado por el usuario desde el textarea
+let textoAMorse = () => {
     const texto = document.getElementById("texto").value;
-
-    // Define el diccionario de letras y números en código Morse
     const morse = {
         A: ".-",
         B: "-...",
@@ -48,11 +42,8 @@ function textoAMorse() {
         8: "---..",
         9: "----."
     };
-
-    // Convierte el texto a mayúsculas y separa las letras
     const letras = texto.toUpperCase().split("");
 
-    // Traduce cada letra o número a su equivalente en código Morse
     const morseArray = letras.map(letra => {
         if (letra === " ") {
             return "/";
@@ -61,35 +52,25 @@ function textoAMorse() {
         }
     });
 
-    // Une los elementos del array con un espacio entre cada código Morse
     const resultado = morseArray.join(" ");
 
-    // Muestra el resultado en el span con el id "resultado"
     document.getElementById("resultado").textContent = resultado;
 }
 /**
- * Descripción de que hace la función
- * @method Nombre de la función
- * @param {string} ParámetroA - Explicación de que valor almacena ParámetroA
- * @param {number} ParámetroB - Explicación de que valor almacena ParámetroB
- * @return Valor que retorna
+ * Copia el código morse.
+ * @method copiar
  */
-function copiarContenidoSpan() {
-    // Obtener el elemento <span> por su id
+let copiar = () => {
     var span = document.getElementById('resultado');
 
-    // Crear un elemento temporal para almacenar el contenido
     var tempElement = document.createElement('textarea');
     tempElement.value = span.textContent;
 
-    // Añadir el elemento temporal al documento
     document.body.appendChild(tempElement);
 
-    // Seleccionar el contenido del elemento temporal
     tempElement.select();
-    tempElement.setSelectionRange(0, 99999); // Para dispositivos móviles
+    tempElement.setSelectionRange(0, 99999);
 
-    // Copiar el contenido al portapapeles utilizando el API del portapapeles
     navigator.clipboard.writeText(tempElement.value)
         .then(function() {
             console.log('Contenido copiado al portapapeles');
@@ -98,6 +79,44 @@ function copiarContenidoSpan() {
             console.error('Error al copiar el contenido: ', error);
         });
 
-    // Remover el elemento temporal del documento
     document.body.removeChild(tempElement);
+}
+
+/**
+ * Reproduce el codigo morse
+ * @method reproducir
+ */
+let reproducir = () => {
+    var resultado = document.getElementById("resultado").textContent.trim();
+    var duracionPunto = 100;
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    var oscilador = audioContext.createOscillator();
+    oscilador.type = "sine";
+    oscilador.frequency.value = 1000;
+
+    var gainNode = audioContext.createGain();
+    gainNode.gain.value = 0;
+
+    oscilador.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    var tiempoActual = audioContext.currentTime;
+
+    for (var i = 0; i < resultado.length; i++) {
+        if (resultado[i] === ".") {
+            gainNode.gain.setValueAtTime(1, tiempoActual);
+            tiempoActual += duracionPunto / 1000;
+            gainNode.gain.setValueAtTime(0, tiempoActual);
+        } else if (resultado[i] === "-") {
+            gainNode.gain.setValueAtTime(1, tiempoActual);
+            tiempoActual += (duracionPunto * 3) / 1000;
+            gainNode.gain.setValueAtTime(0, tiempoActual);
+        } else if (resultado[i] === " ") {
+            tiempoActual += (duracionPunto * 3) / 1000;
+        }
+        tiempoActual += (duracionPunto * 1) / 1000;
+    }
+
+    oscilador.start();
+    oscilador.stop(tiempoActual);
 }
