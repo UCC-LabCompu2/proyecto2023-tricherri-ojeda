@@ -47,14 +47,32 @@ let textoAMorse = () => {
     const morseArray = letras.map(letra => {
         if (letra === " ") {
             return "/";
-        } else {
+        } else if (letra.match(/^[A-Z0-9]+$/)) {
             return morse[letra] || "";
+        } else {
+            return null;
         }
     });
 
-    const resultado = morseArray.join(" ");
+    // Verifica si hay caracteres no válidos
+    if (morseArray.includes(null)) {
+        openDialog();
+    } else {
+        // Une los elementos del array con un espacio entre cada código Morse
+        const resultado = morseArray.join(" ");
 
-    document.getElementById("resultado").textContent = resultado;
+        // Muestra el resultado en el span con el id "resultado"
+        document.getElementById("resultado").textContent = resultado;
+    }
+}
+let cerrarDialog = () => {
+    const dialog = document.getElementById("myDialog");
+    dialog.close();
+}
+
+let openDialog = () => {
+    const dialog = document.getElementById("myDialog");
+    dialog.showModal();
 }
 /**
  * Copia el código morse.

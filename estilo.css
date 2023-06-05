@@ -193,3 +193,12 @@ footer {
 .Footer {
     background-color: #38434f;
 }
+
+dialog{
+    text-align: center;
+    border: 5pt solid #54789b;
+    letter-spacing: 2px;
+}
+#boton_dialog{
+    margin-right: 30px;
+}
