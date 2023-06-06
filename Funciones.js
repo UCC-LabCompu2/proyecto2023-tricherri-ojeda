@@ -153,3 +153,37 @@ let borrarCanvas = () =>{
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+let dibujarOndas = () => {
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const xInicial = 5;
+    const xFinal = 50 ;
+    let y = 0;
+
+    for (let x = xInicial; x <= xFinal; x += 5) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x, canvas.height - y);
+        ctx.strokeStyle = "#7ab1f3";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        y=y+5;
+    }
+
+    y=0;
+    const inicioX = 55;
+    const finX = 100 ;
+
+
+    for (let x = inicioX; x <= finX; x += 5) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x, canvas.height - y);
+        ctx.strokeStyle = "#7ab1f3";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        y=y+5;
+    }
+}

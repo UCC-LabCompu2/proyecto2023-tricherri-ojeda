@@ -121,8 +121,6 @@ button:hover {
 
 canvas {
     margin-top: 10px;
-    width: 100px;
-    height: 45px;
     border: 2px solid #54789b;
     border-radius: 12px;
     background-color: #38434f;
