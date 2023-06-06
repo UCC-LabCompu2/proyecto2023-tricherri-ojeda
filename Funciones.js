@@ -59,8 +59,7 @@ let textoAMorse = () => {
     if (morseArray.includes(null)) {
         openDialog();
     } else {
-        const resultado = morseArray.join(" ");
-        document.getElementById("resultado").textContent = resultado;
+        document.getElementById("resultado").textContent = morseArray.join(" ");
     }
 
 }
@@ -85,9 +84,9 @@ let openDialog = () => {
  * @method copiar
  */
 let copiar = () => {
-    var span = document.getElementById('resultado');
+    const span = document.getElementById('resultado');
 
-    var tempElement = document.createElement('textarea');
+    const tempElement = document.createElement('textarea');
     tempElement.value = span.textContent;
 
     document.body.appendChild(tempElement);
@@ -111,22 +110,22 @@ let copiar = () => {
  * @method reproducir
  */
 let reproducir = () => {
-    var resultado = document.getElementById("resultado").textContent.trim();
-    var duracionPunto = 300;
-    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    var oscilador = audioContext.createOscillator();
+    const resultado = document.getElementById("resultado").textContent.trim();
+    const duracionPunto = 300;
+    const audioContext = new (window.AudioContext)();
+    const oscilador = audioContext.createOscillator();
     oscilador.type = "sine";
     oscilador.frequency.value = 700;
 
-    var gainNode = audioContext.createGain();
+    const gainNode = audioContext.createGain();
     gainNode.gain.value = 0;
 
     oscilador.connect(gainNode);
     gainNode.connect(audioContext.destination);
 
-    var tiempoActual = audioContext.currentTime;
+    let tiempoActual = audioContext.currentTime;
 
-    for (var i = 0; i < resultado.length; i++) {
+    for (let i = 0; i < resultado.length; i++) {
         if (resultado[i] === ".") {
             gainNode.gain.setValueAtTime(1, tiempoActual);
             tiempoActual += duracionPunto / 1000;
@@ -138,7 +137,7 @@ let reproducir = () => {
         } else if (resultado[i] === " ") {
             tiempoActual += (duracionPunto * 3) / 3000;
         }
-        tiempoActual += (duracionPunto * 1) / 1000;
+        tiempoActual += (duracionPunto) / 1000;
     }
 
     oscilador.start();
