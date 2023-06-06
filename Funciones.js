@@ -65,11 +65,18 @@ let textoAMorse = () => {
         document.getElementById("resultado").textContent = resultado;
     }
 }
+/**
+ * Cierra el dialog de la alerta de error de caracteres ingresados.
+ * @method cerrarDialog
+ */
 let cerrarDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.close();
 }
-
+/**
+ * Abre el dialog de la alerta de error de caracteres ingresados
+ * @method openDialog
+ */
 let openDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.showModal();
