@@ -44,8 +44,10 @@ let textoAMorse = () => {
     };
     const letras = texto.toUpperCase().split("");
 
-    const morseArray = letras.map(letra => {
-        if (letra === " ") {
+    const morseArray = letras.map((letra, index) => {
+        if (letra === " " && index === 0) {
+            return "";
+        } else if (letra === " ") {
             return "/";
         } else if (letra.match(/^[A-Z0-9]+$/)) {
             return morse[letra] || "";
@@ -57,11 +59,10 @@ let textoAMorse = () => {
     if (morseArray.includes(null)) {
         openDialog();
     } else {
-
         const resultado = morseArray.join(" ");
-
         document.getElementById("resultado").textContent = resultado;
     }
+
 }
 /**
  * Cierra el dialog de la alerta de error de caracteres ingresados.
@@ -135,7 +136,7 @@ let reproducir = () => {
             tiempoActual += (duracionPunto * 3) / 1000;
             gainNode.gain.setValueAtTime(0, tiempoActual);
         } else if (resultado[i] === " ") {
-            tiempoActual += (duracionPunto * 3) / 1000;
+            tiempoActual += (duracionPunto * 3) / 3000;
         }
         tiempoActual += (duracionPunto * 1) / 1000;
     }
