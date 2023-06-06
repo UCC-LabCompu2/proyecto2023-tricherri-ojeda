@@ -54,14 +54,12 @@ let textoAMorse = () => {
         }
     });
 
-    // Verifica si hay caracteres no válidos
     if (morseArray.includes(null)) {
         openDialog();
     } else {
-        // Une los elementos del array con un espacio entre cada código Morse
+
         const resultado = morseArray.join(" ");
 
-        // Muestra el resultado en el span con el id "resultado"
         document.getElementById("resultado").textContent = resultado;
     }
 }
@@ -113,11 +111,11 @@ let copiar = () => {
  */
 let reproducir = () => {
     var resultado = document.getElementById("resultado").textContent.trim();
-    var duracionPunto = 100;
+    var duracionPunto = 300;
     var audioContext = new (window.AudioContext || window.webkitAudioContext)();
     var oscilador = audioContext.createOscillator();
     oscilador.type = "sine";
-    oscilador.frequency.value = 1000;
+    oscilador.frequency.value = 700;
 
     var gainNode = audioContext.createGain();
     gainNode.gain.value = 0;
