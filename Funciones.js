@@ -125,16 +125,23 @@ let reproducir = () => {
 
     let tiempoActual = audioContext.currentTime;
 
+    let puntos = 0;
+    let guiones = 0;
+    let espacios = 0;
+
     for (let i = 0; i < resultado.length; i++) {
         if (resultado[i] === ".") {
+            puntos++;
             gainNode.gain.setValueAtTime(1, tiempoActual);
             tiempoActual += duracionPunto / 1000;
             gainNode.gain.setValueAtTime(0, tiempoActual);
         } else if (resultado[i] === "-") {
+            guiones++;
             gainNode.gain.setValueAtTime(1, tiempoActual);
             tiempoActual += (duracionPunto * 3) / 1000;
             gainNode.gain.setValueAtTime(0, tiempoActual);
         } else if (resultado[i] === " ") {
+            espacios++;
             tiempoActual += (duracionPunto * 3) / 3000;
         }
         tiempoActual += (duracionPunto) / 1000;
@@ -142,6 +149,29 @@ let reproducir = () => {
 
     oscilador.start();
     oscilador.stop(tiempoActual);
+
+    const tiempoTotal = tiempoActual * 1000; // Convertir a milisegundos
+    const tiempoEspera = tiempoTotal + 1000; // Agregar 1 segundo de tiempo de espera
+
+    setTimeout(() => {
+        funcionDespuesDeTiempo(puntos, guiones, espacios);
+    }, tiempoEspera);
+}
+function funcionDespuesDeTiempo(puntos, guiones, espacios) {
+    console.log("Función llamada después del tiempo de reproducción:");
+    console.log("Cantidad de puntos:", puntos);
+    console.log("Cantidad de guiones:", guiones);
+    console.log("Cantidad de espacios:", espacios);
+
+    // Limpia el contenido del canvas después de otro tiempo específico
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+
+
+    setTimeout(() => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }, 0);
 }
 /**
  * Borra el contenido del canvas
@@ -190,3 +220,13 @@ let dibujarOndas = () => {
         y=y+5;
     }
 }
+
+/*Tiempo
+const displayTime = contadorPuntos*300 + (contadorEspacios*900)/3000 + (contadorLineas*900)/1000 ; // 2 segundos
+
+// Borra el contenido del canvas después del tiempo determinado
+setTimeout(() => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}, displayTime);
+*/
+
