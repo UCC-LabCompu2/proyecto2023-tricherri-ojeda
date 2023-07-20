@@ -154,14 +154,15 @@ let reproducir = () => {
     const tiempoEspera = tiempoTotal + 1000; // Agregar 1 segundo de tiempo de espera
 
     setTimeout(() => {
-        funcionDespuesDeTiempo(puntos, guiones, espacios);
+        borrarCanvas(puntos, guiones, espacios);
     }, tiempoEspera);
 }
-function funcionDespuesDeTiempo(puntos, guiones, espacios) {
-    console.log("Función llamada después del tiempo de reproducción:");
-    console.log("Cantidad de puntos:", puntos);
-    console.log("Cantidad de guiones:", guiones);
-    console.log("Cantidad de espacios:", espacios);
+/**
+ * Borra el contenido del canvas
+ * @method borrarCanvas
+ */
+function borrarCanvas(puntos, guiones, espacios) {
+
 
     // Limpia el contenido del canvas después de otro tiempo específico
     const canvas = document.getElementById('canvas');
@@ -172,17 +173,13 @@ function funcionDespuesDeTiempo(puntos, guiones, espacios) {
     setTimeout(() => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }, 0);
-}
-/**
- * Borra el contenido del canvas
- * @method borrarCanvas
- */
-let borrarCanvas = () =>{
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    console.log("Función llamada después del tiempo de reproducción:");
+    console.log("Cantidad de puntos:", puntos);
+    console.log("Cantidad de guiones:", guiones);
+    console.log("Cantidad de espacios:", espacios);
 }
+
 /**
  * Dibuja las ondas sobre el canvas
  * @method dibujarOndas
@@ -229,4 +226,3 @@ setTimeout(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }, displayTime);
 */
-
