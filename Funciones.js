@@ -164,7 +164,6 @@ let reproducir = () => {
 function borrarCanvas(puntos, guiones, espacios) {
 
 
-    // Limpia el contenido del canvas después de otro tiempo específico
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -218,11 +217,3 @@ let dibujarOndas = () => {
     }
 }
 
-/*Tiempo
-const displayTime = contadorPuntos*300 + (contadorEspacios*900)/3000 + (contadorLineas*900)/1000 ; // 2 segundos
-
-// Borra el contenido del canvas después del tiempo determinado
-setTimeout(() => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-}, displayTime);
-*/
