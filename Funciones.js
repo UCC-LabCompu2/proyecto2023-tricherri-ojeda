@@ -84,25 +84,10 @@ let openDialog = () => {
  * @method copiar
  */
 let copiar = () => {
-    const span = document.getElementById('resultado');
+    const texto = document.getElementById('resultado').textContent;
 
-    const tempElement = document.createElement('textarea');
-    tempElement.value = span.textContent;
+    navigator.clipboard.writeText(texto);
 
-    document.body.appendChild(tempElement);
-
-    tempElement.select();
-    tempElement.setSelectionRange(0, 99999);
-
-    navigator.clipboard.writeText(tempElement.value)
-        .then(function() {
-            console.log('Contenido copiado al portapapeles');
-        })
-        .catch(function(error) {
-            console.error('Error al copiar el contenido: ', error);
-        });
-
-    document.body.removeChild(tempElement);
 }
 
 /**
