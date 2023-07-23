@@ -44,8 +44,8 @@ let textoAMorse = () => {
     };
     const letras = texto.toUpperCase().split("");
 
-    const morseArray = letras.map((letra, index) => {
-        if (letra === " " && index === 0) {
+    const morseArray = letras.map((letra, i) => {
+        if (letra === " " && i === 0) {
             return "";
         } else if (letra === " ") {
             return "/";
@@ -135,8 +135,8 @@ let reproducir = () => {
     oscilador.start();
     oscilador.stop(tiempoActual);
 
-    const tiempoTotal = tiempoActual * 1000; // Convertir a milisegundos
-    const tiempoEspera = tiempoTotal + 1000; // Agregar 1 segundo de tiempo de espera
+    const tiempoTotal = tiempoActual * 1000;
+    const tiempoEspera = tiempoTotal + 1000;
 
     setTimeout(() => {
         borrarCanvas(puntos, guiones, espacios);
