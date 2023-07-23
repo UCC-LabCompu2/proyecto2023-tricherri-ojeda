@@ -173,11 +173,6 @@ let borrarCanvas = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }, 0);
 
-    /*
-    console.log("Cantidad de puntos:", puntos);
-    console.log("Cantidad de guiones:", guiones);
-    console.log("Cantidad de espacios:", espacios);
-    */
 }
 
 /**
