@@ -151,9 +151,7 @@ let borrarCanvas = () => {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
 
-    setTimeout(() => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 }
 
