@@ -186,7 +186,7 @@ let dibujarOndas = () => {
             if(x>canvas.width){
                 x = -460;
             }
-        }, 20); // Aumentar el intervalo de tiempo para que la animación sea más lenta
+        }, 20);
     };
 }
 
