@@ -96,35 +96,36 @@ let copiar = () => {
  */
 let reproducir = () => {
     const resultado = document.getElementById("resultado").textContent.trim();
-    const duracionPunto = 300;
-    const audioContext = new (window.AudioContext)();
-    const oscilador = audioContext.createOscillator();
+    const contexto = new AudioContext();
+    const oscilador = contexto.createOscillator();
     oscilador.type = "sine";
     oscilador.frequency.value = 700;
 
-    const gainNode = audioContext.createGain();
-    gainNode.gain.value = 0;
+    const nodoGan = contexto.createGain();
+    nodoGan.gain.value = 0;
 
-    oscilador.connect(gainNode);
-    gainNode.connect(audioContext.destination);
+    oscilador.connect(nodoGan);
+    nodoGan.connect(contexto.destination);
 
-    let tiempoActual = audioContext.currentTime;
+    let tiempoActual = contexto.currentTime;
 
     let puntos = 0;
     let guiones = 0;
     let espacios = 0;
 
+    const duracionPunto = 300;
+
     for (let i = 0; i < resultado.length; i++) {
         if (resultado[i] === ".") {
             puntos++;
-            gainNode.gain.setValueAtTime(1, tiempoActual);
+            nodoGan.gain.setValueAtTime(1, tiempoActual);
             tiempoActual += duracionPunto / 1000;
-            gainNode.gain.setValueAtTime(0, tiempoActual);
+            nodoGan.gain.setValueAtTime(0, tiempoActual);
         } else if (resultado[i] === "-") {
             guiones++;
-            gainNode.gain.setValueAtTime(1, tiempoActual);
+            nodoGan.gain.setValueAtTime(1, tiempoActual);
             tiempoActual += (duracionPunto * 3) / 1000;
-            gainNode.gain.setValueAtTime(0, tiempoActual);
+            nodoGan.gain.setValueAtTime(0, tiempoActual);
         } else if (resultado[i] === " ") {
             espacios++;
             tiempoActual += (duracionPunto * 3) / 3000;
@@ -136,11 +137,10 @@ let reproducir = () => {
     oscilador.stop(tiempoActual);
 
     const tiempoTotal = tiempoActual * 1000;
-    const tiempoEspera = tiempoTotal + 1000;
 
     setTimeout(() => {
-        borrarCanvas(puntos, guiones, espacios);
-    }, tiempoEspera);
+        borrarCanvas();
+    }, tiempoTotal);
 }
 /**
  * Borra el contenido del canvas
@@ -148,11 +148,8 @@ let reproducir = () => {
  */
 let borrarCanvas = () => {
 
-
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-
-
 
     setTimeout(() => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
