@@ -50,7 +50,7 @@ let textoAMorse = () => {
         } else if (letra === " ") {
             return "/";
         } else if (letra.match(/^[A-Z0-9]+$/)) {
-            return morse[letra] || "";
+            return morse[letra];
         } else {
             return null;
         }
