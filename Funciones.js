@@ -142,7 +142,7 @@ let reproducir = () => {
         borrarCanvas();
     }, tiempoTotal);
     setTimeout(() => {
-        clearInterval(Interval);
+        clearInterval(animationInterval);
     }, tiempoTotal);
 }
 /**
@@ -162,38 +162,32 @@ let borrarCanvas = () => {
  * Dibuja las ondas sobre el canvas
  * @method dibujarOndas
  */
+
+
+const dx = 1;
+var animationInterval;
 let dibujarOndas = () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
+    canvas.width = canvas.offsetWidth;
 
-    const xInicial = 5;
-    const xFinal = 50 ;
-    let y = 0;
+    let img = new Image();
+    img.src = "Imágenes/Onda.jpg";
 
-    for (let x = xInicial; x <= xFinal; x += 5) {
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.lineTo(x, canvas.height - y);
-        ctx.strokeStyle = "#7ab1f3";
-        ctx.lineWidth = 3;
-        ctx.stroke();
-        y=y+5;
-    }
+    img.onload = function () {
+        let x = -460;
 
-    y=0;
-    const inicioX = 55;
-    const finX = 100 ;
+        animationInterval = setInterval(function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, x, -35);
 
+            x += dx;
 
-    for (let x = inicioX; x <= finX; x += 5) {
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.lineTo(x, canvas.height - y);
-        ctx.strokeStyle = "#7ab1f3";
-        ctx.lineWidth = 3;
-        ctx.stroke();
-        y=y+5;
-    }
+            if(x>canvas.width){
+                x = -460;
+            }
+        }, 20); // Aumentar el intervalo de tiempo para que la animación sea más lenta
+    };
 }
 
 

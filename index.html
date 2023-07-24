@@ -31,14 +31,14 @@
         <p id="Codigo_Morse">
             <!--- <label for="codigo">Código Morse</label> --->
             Código Morse
-            <button type="button" onclick="reproducir();Interval=setInterval(function(){dibujarOndas()},100)"><img id="Simbolo_Play" src="Imágenes/simbolo_auris_gris.png" alt="Icono de auriculares"></button>
+            <button type="button" onclick="reproducir();dibujarOndas()"><img id="Simbolo_Play" src="Imágenes/simbolo_auris_gris.png" alt="Icono de auriculares"></button>
             <button type="button" onclick="copiar()"><img id="Simbolo_Copiar" src="Imágenes/simbolo_copiar_gris.png" alt="Icono de copiar texto">
             </button>
         </p>
         <!---<label for="codigo"></label> --->
         <!--- <textarea id="codigo" rows="6.7" cols="70"> </textarea> --->
         <span id="resultado" class="cajaCodigo"></span>
-        <canvas id="canvas" width="105" height="47"></canvas>
+        <canvas id="canvas" width="125" height="70"></canvas>
     </div>
     <dialog id="myDialog">
         <h3>Error al Ingresar Datos</h3>
