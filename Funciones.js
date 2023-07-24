@@ -141,6 +141,9 @@ let reproducir = () => {
     setTimeout(() => {
         borrarCanvas();
     }, tiempoTotal);
+    setTimeout(() => {
+        clearInterval(Interval);
+    }, tiempoTotal);
 }
 /**
  * Borra el contenido del canvas
@@ -192,4 +195,7 @@ let dibujarOndas = () => {
         y=y+5;
     }
 }
+
+
+
 //
