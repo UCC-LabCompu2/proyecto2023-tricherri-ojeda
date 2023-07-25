@@ -12,6 +12,7 @@
 ### ➤  T e c n o l o g i a s  U s a d a s 
 - HTML5
 - CSS3
+- JavaScript
 
 ### ➤  L i n k s
 - [Página Web](https://ucc-labcompu2.github.io/proyecto2023-tricherri-ojeda/)
