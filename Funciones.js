@@ -142,7 +142,7 @@ let reproducir = () => {
         borrarCanvas();
     }, tiempoTotal);
     setTimeout(() => {
-        clearInterval(animationInterval);
+        clearInterval(animacion);
     }, tiempoTotal);
 }
 /**
@@ -159,14 +159,14 @@ let borrarCanvas = () => {
 }
 
 /**
- * Dibuja las ondas sobre el canvas
- * @method dibujarOndas
+ * Animación de las ondas sobre el canvas
+ * @method animacionOndas
  */
 
 
 const dx = 1;
-var animationInterval;
-let dibujarOndas = () => {
+let animacion;
+let animacionOndas = () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = canvas.offsetWidth;
@@ -177,7 +177,7 @@ let dibujarOndas = () => {
     img.onload = function () {
         let x = -460;
 
-        animationInterval = setInterval(function () {
+        animacion = setInterval(function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(img, x, -35);
 
