@@ -169,27 +169,23 @@ let animacion;
 let animacionOndas = () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
-    canvas.width = canvas.offsetWidth;
 
     let img = new Image();
     img.src = "Imágenes/Onda.jpg";
 
-    img.onload = function () {
-        let x = -460;
+    let x = -460;
 
-        animacion = setInterval(function () {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, x, -35);
+    animacion = setInterval(function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, x, -35);
 
-            x += dx;
+        x += dx;
 
-            if(x>canvas.width){
-                x = -460;
-            }
-        }, 20);
-    };
+        if (x > canvas.width) {
+            x = -460;
+        }
+    }, 20);
 }
-
 
 
 //
